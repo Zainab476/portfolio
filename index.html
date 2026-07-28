@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zainab | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body.dark-theme {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 3rem;
+      min-height: 100vh;
+      position: relative; /* needed for absolute footer */
+    }
+
+    .flex {
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .label {
+      display: block;
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.3rem;
+    }
+
+    .centered-nav {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      margin-bottom: 1.4rem;
+    }
+
+    nav ul li .label {
+      display: block;
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 0.3rem;
+    }
+
+    nav ul li a {
+      font-size: 2.5rem;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ff0077;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff0077;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+
+    footer a img {
+      width: 28px;
+      margin-right: 15px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    footer a:hover img {
+      transform: scale(1.2);
+    }
+
+    /* Top center header */
+    .top-header {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .top-header nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 2.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .top-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .top-header nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: #ff0077;
+      transition: width 0.3s ease;
+    }
+
+    .top-header nav ul li a:hover,
+    .top-header nav ul li a.active {
+      color: #ff0077;
+    }
+
+    .top-header nav ul li a:hover::after,
+    .top-header nav ul li a.active::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <div class="left-nav">
+    <nav>
+      <ul>
+        <li>
+          <span class="label">Go to</span>
+          <a href="projects.html">Portfolio</a>
+        </li>
+        <li>
+          <span class="label">Reach me</span>
+          <a href="contact.html">Contact</a>
+        </li>
+        <li>
+          <span class="label">Know me</span>
+          <a href="about.html">About</a>
+        </li>
+      </ul>
+    </nav>
+    <footer>
+      <a href="#"><img src="image/x.webp" alt="X"></a>
+      <a href="#"><img src="image/insta.avif" alt="Instagram"></a>
+      <a href="#"><img src="image/tiktok.webp" alt="TikTok"></a>
+      <a href="mailto:alshaikh995@email.com"><img src="image/email.png" alt="Email"></a>
+    </footer>
+  </div>
+</body>
+</html>

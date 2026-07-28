@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Zainab Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body.dark-theme {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Header navigation */
+    .top-header {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .top-header nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 2.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .top-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .top-header nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: #ff0077;
+      transition: width 0.3s ease;
+    }
+
+    .top-header nav ul li a:hover,
+    .top-header nav ul li a.active {
+      color: #ff0077;
+    }
+
+    .top-header nav ul li a:hover::after,
+    .top-header nav ul li a.active::after {
+      width: 100%;
+    }
+
+    /* Contact layout split screen */
+    .contact-layout {
+      display: flex;
+      flex: 1;
+      height: 100%;
+    }
+
+    .contact-image {
+      flex: 1;
+      background-image: url('images/zainab-photo.jpg'); /* Replace with your image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .contact-content {
+      flex: 1;
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #000;
+    }
+
+    .contact-title {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      color: #ff0077;
+    }
+
+    .contact-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+
+    .social-links {
+     width: 28px;
+      margin-right: 15px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a {
+      color: #ff0077;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer centered at bottom */
+    .main-footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 2rem;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 900px) {
+      .contact-layout {
+        flex-direction: column;
+      }
+
+      .contact-image {
+        height: 40vh;
+        min-height: 300px;
+      }
+
+      .contact-content {
+        padding: 2rem;
+        text-align: center;
+      }
+    }
+
+        footer {
+      margin-top: auto;
+      padding-top: 2rem;
+    }
+
+    footer a img {
+      width: 28px;
+      margin-right: 15px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    footer a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <header class="top-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contact-layout">
+    <div class="contact-image"></div>
+    <div class="contact-content">
+      <h1 class="contact-title">Contact Me</h1>
+      <p class="contact-text">
+        For commissions, collaborations, or just to say hello, feel free to reach out:
+      </p>
+      <p class="contact-text">
+        📧 Email: <a href="mailto:your@email.com">alshaikh995@email.com</a><br>
+        📱 Phone: +973-39060522
+      </p>
+    <footer>
+      <a href="#"><img src="image/git.png" alt="git"></a>
+      <a href="#"><img src="image/link.png" alt="LIKEDIN"></a>
+      <a href="#"><img src="image/insta.avif" alt="Instagram"></a>
+    </footer>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <p>2026 © Zainab Alshaikh</p>
+  </footer>
+</body>
+</html>

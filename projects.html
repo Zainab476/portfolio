@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Zainab Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body.dark-theme {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Header navigation */
+    .top-header {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .top-header nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 2.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .top-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .top-header nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: #ff0077;
+      transition: width 0.3s ease;
+    }
+
+    .top-header nav ul li a:hover,
+    .top-header nav ul li a.active {
+      color: #ff0077;
+    }
+
+    .top-header nav ul li a:hover::after,
+    .top-header nav ul li a.active::after {
+      width: 100%;
+    }
+
+    /* Projects grid layout */
+    .projects-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 4rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .project-item {
+      text-align: center;
+      width: 250px;
+    }
+
+.project-item img {
+  width: 300px;        /* fixed width */
+  height: 400px;       /* fixed height */
+  object-fit: cover;   /* crop/scale to fill the box */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+    .project-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .project-item h3 {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #ff0077;
+    }
+
+    /* Footer centered */
+    .main-footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <header class="top-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects-row">
+    <div class="project-item">
+      <a href="project1.html">
+        <img src="image/employee.jpg" alt="Employee App">
+      </a>
+      <h3>Employee Attendance</h3>
+    </div>
+    <div class="project-item">
+      <a href="project2.html">
+        <img src="image/diet.png" alt="Diet App">
+      </a>
+      <h3>AI Dietition</h3>
+    </div>
+    <div class="project-item">
+      <a href="project3.html">
+        <img src="image/traffic.jpg" alt="Traffic Prediction">
+      </a>
+      <h3>Traffic Accident</h3>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <p>2026 © Zainab Alshaikh</p>
+  </footer>
+</body>
+</html>

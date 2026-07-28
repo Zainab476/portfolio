@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Dietician | Zainab Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body.dark-theme {
+      background-color: #000;
+      color: #fff;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Header navigation */
+    .top-header {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    .top-header nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 2.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .top-header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.25rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .top-header nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -6px;
+      left: 0;
+      background-color: #ff0077;
+      transition: width 0.3s ease;
+    }
+
+    .top-header nav ul li a:hover,
+    .top-header nav ul li a.active {
+      color: #ff0077;
+    }
+
+    .top-header nav ul li a:hover::after,
+    .top-header nav ul li a.active::after {
+      width: 100%;
+    }
+
+    /* Project detail layout */
+    .project-detail {
+      max-width: 800px;
+      margin: 5rem auto;
+      padding: 2rem;
+    }
+
+    .project-title {
+      font-size: 2.5rem;
+      color: #ff0077;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .project-detail video {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .project-info h2 {
+      font-size: 1.3rem;
+      color: #ff0077;
+      margin-top: 1.5rem;
+    }
+
+    .project-info p {
+      font-size: 1rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .project-info a {
+      color: #ff0077;
+      text-decoration: none;
+    }
+
+    .project-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    .main-footer {
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+                footer {
+      margin-top: auto;
+      padding-top: -10rem;
+    }
+
+    footer a img {
+      width: 30px;
+      margin-right: 5px;
+      filter: invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    footer a:hover img {
+      transform: scale(1.2);
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <header class="top-header">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-detail">
+    <h1 class="project-title">Artificial Intelligence Dietician (Personalized Nutrition Management System)</h1>
+    <video src="videos/project2.mp4" controls></video>
+
+    <section class="project-info">
+      <h2>Description</h2>
+      <p>
+        An AI-powered system that provides personalized nutrition recommendations based on user input. It includes user and admin interfaces for meal planning, calorie tracking, and nutrient analysis, supporting health goal management.
+      </p>
+
+      <h2>Technologies Used</h2>
+      <p>Python, Django, HTML, CSS, JavaScript, MySQL</p>
+
+      <h2>Source Code</h2>  
+    <footer>
+      <a href="https://github.com/alawihasib/AI_Dietician"><img src="image/git.png" alt="git">github</a>
+    </footer>
+      </a>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <p>2026 © Zainab Alshaikh</p>
+  </footer>
+</body>
+</html>
