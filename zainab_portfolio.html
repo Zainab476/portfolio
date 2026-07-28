@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zainab Alshaikh — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #1a1a24;
+    --card: #16161f;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #f0eef8;
+    --text2: #9b97b4;
+    --text3: #6b677e;
+    --accent: #7c6ef0;
+    --accent2: #a08cf8;
+    --teal: #2dd4bf;
+    --coral: #f97c6b;
+    --green: #5fda8e;
+    --amber: #f5c842;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,15,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.5rem,5vw,4rem);
+    height: 60px;
+  }
+  .nav-logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px; font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .nav-logo span { color: var(--accent2); }
+  nav ul { display: flex; gap: 2rem; list-style: none; }
+  nav ul a {
+    font-size: 13px; color: var(--text2); text-decoration: none;
+    letter-spacing: 0.02em; transition: color .2s;
+  }
+  nav ul a:hover { color: var(--text); }
+
+  /* SECTIONS */
+  section { padding: clamp(5rem,10vw,8rem) clamp(1.5rem,8vw,6rem); max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 100px; padding-bottom: 4rem;
+    max-width: 1100px; margin: 0 auto;
+    padding-left: clamp(1.5rem,8vw,6rem);
+    padding-right: clamp(1.5rem,8vw,6rem);
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(124,110,240,0.12); border: 0.5px solid rgba(124,110,240,0.3);
+    border-radius: 100px; padding: 5px 14px;
+    font-size: 12px; color: var(--accent2); font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero-eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--accent2); }
+  .hero-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700; line-height: 1.05;
+    letter-spacing: -1.5px;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .hero-name .accent-line {
+    background: linear-gradient(90deg, var(--accent2), var(--teal));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--text2); font-weight: 400;
+    max-width: 520px; margin: 1.25rem 0 2rem;
+    line-height: 1.7;
+  }
+  .hero-chips {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 2.5rem;
+  }
+  .chip {
+    background: var(--bg3); border: 0.5px solid var(--border2);
+    border-radius: 100px; padding: 6px 14px;
+    font-size: 12px; color: var(--text2); font-weight: 500;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 10px; padding: 12px 26px;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: background .2s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--text2);
+    border: 0.5px solid var(--border2); border-radius: 10px; padding: 12px 26px;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover { color: var(--text); border-color: rgba(255,255,255,0.28); }
+
+  /* SECTION HEADER */
+  .sec-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent2);
+    margin-bottom: 0.5rem;
+  }
+  .sec-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem); font-weight: 600;
+    letter-spacing: -0.5px; color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  .sec-desc { font-size: 15px; color: var(--text2); max-width: 520px; margin-bottom: 3rem; line-height: 1.7; }
+
+  /* FEATURED PROJECTS */
+  .featured-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
+  .proj-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    border-radius: 16px; padding: 1.75rem;
+    position: relative; overflow: hidden;
+    transition: border-color .2s, transform .2s;
+    display: flex; flex-direction: column;
+  }
+  .proj-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .proj-card.span-2 { grid-column: 1 / -1; flex-direction: row; gap: 2rem; align-items: flex-start; }
+  .proj-card.span-2 .proj-body { flex: 1; }
+  .proj-rank {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; margin-bottom: 1rem;
+  }
+  .rank-1 { color: var(--amber); }
+  .proj-title-sm {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.15rem; font-weight: 600; color: var(--text);
+    margin-bottom: 0.5rem; line-height: 1.3;
+  }
+  .proj-desc { font-size: 13.5px; color: var(--text2); line-height: 1.65; margin-bottom: 1.25rem; flex: 1; }
+  .tech-stack { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 1.25rem; }
+  .tag {
+    font-size: 11px; font-weight: 500;
+    border-radius: 6px; padding: 3px 9px;
+    border: 0.5px solid transparent;
+  }
+  .tag-py { background: rgba(45,212,191,0.1); color: var(--teal); border-color: rgba(45,212,191,0.2); }
+  .tag-js { background: rgba(245,200,66,0.1); color: var(--amber); border-color: rgba(245,200,66,0.2); }
+  .tag-java { background: rgba(249,124,107,0.1); color: var(--coral); border-color: rgba(249,124,107,0.2); }
+  .tag-r { background: rgba(95,218,142,0.1); color: var(--green); border-color: rgba(95,218,142,0.2); }
+  .tag-def { background: rgba(124,110,240,0.1); color: var(--accent2); border-color: rgba(124,110,240,0.2); }
+  .proj-features { list-style: none; margin-bottom: 1.25rem; }
+  .proj-features li {
+    font-size: 13px; color: var(--text2);
+    padding: 4px 0; display: flex; align-items: flex-start; gap: 8px;
+  }
+  .proj-features li::before { content: '→'; color: var(--accent2); flex-shrink: 0; }
+  .proj-achievement-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    background: rgba(124,110,240,0.15); color: var(--accent2);
+    border: 0.5px solid rgba(124,110,240,0.3);
+    border-radius: 6px; padding: 3px 9px; margin-bottom: 1.25rem;
+  }
+  .accent-dot {
+    position: absolute; top: -40px; right: -40px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(124,110,240,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ALL PROJECTS GRID */
+  .cat-section { margin-bottom: 3.5rem; }
+  .cat-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text3);
+    margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .all-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  .mini-card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 12px; padding: 1.25rem;
+    transition: border-color .2s;
+  }
+  .mini-card:hover { border-color: var(--border2); }
+  .mini-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 0.4rem; }
+  .mini-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; margin-bottom: 0.9rem; }
+  .mini-stack { display: flex; flex-wrap: wrap; gap: 5px; }
+  .mini-tag {
+    font-size: 10.5px; color: var(--text3);
+    background: var(--bg3); border-radius: 4px; padding: 2px 7px;
+  }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .skill-group {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 14px; padding: 1.25rem;
+  }
+  .skill-group-title {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent2);
+    margin-bottom: 0.9rem;
+  }
+  .skill-pill-list { display: flex; flex-wrap: wrap; gap: 7px; }
+  .skill-pill {
+    font-size: 12.5px; color: var(--text2);
+    background: var(--bg3); border: 0.5px solid var(--border);
+    border-radius: 6px; padding: 4px 10px;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 1.5rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 1px; background: var(--border);
+  }
+  .tl-item { position: relative; margin-bottom: 2.5rem; }
+  .tl-dot {
+    position: absolute; left: -1.5rem; top: 6px;
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--accent); border: 2px solid var(--bg);
+    transform: translateX(-4px);
+  }
+  .tl-period { font-size: 11.5px; color: var(--text3); margin-bottom: 4px; }
+  .tl-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .tl-org { font-size: 13px; color: var(--accent2); margin-bottom: 0.6rem; }
+  .tl-body { font-size: 13.5px; color: var(--text2); line-height: 1.65; }
+
+  /* CERTS */
+  .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+  .cert-card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 14px; padding: 1.25rem 1.5rem;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .cert-icon {
+    width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .cert-icon-1 { background: rgba(124,110,240,0.15); }
+  .cert-icon-2 { background: rgba(45,212,191,0.15); }
+  .cert-icon-3 { background: rgba(245,200,66,0.15); }
+  .cert-icon-4 { background: rgba(95,218,142,0.15); }
+  .cert-name { font-size: 13.5px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .cert-org { font-size: 12px; color: var(--text3); }
+
+  /* CONTACT */
+  .contact-inner {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 20px; padding: 3rem clamp(1.5rem,5vw,3.5rem);
+    text-align: center; max-width: 600px; margin: 0 auto;
+  }
+  .contact-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600;
+    color: var(--text); margin-bottom: 0.75rem;
+  }
+  .contact-links { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 2rem; }
+  .contact-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--bg3); border: 0.5px solid var(--border2);
+    border-radius: 10px; padding: 10px 20px;
+    font-size: 13.5px; color: var(--text2); text-decoration: none;
+    transition: border-color .2s, color .2s;
+  }
+  .contact-btn:hover { border-color: var(--accent); color: var(--accent2); }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    font-size: 12px; color: var(--text3);
+    border-top: 0.5px solid var(--border);
+  }
+
+  @media (max-width: 680px) {
+    .featured-grid { grid-template-columns: 1fr; }
+    .proj-card.span-2 { flex-direction: column; }
+    nav ul { gap: 1.2rem; }
+    .about-grid { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Zainab<span>.</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-eyebrow">Available for opportunities</div>
+  <h1 class="hero-name">
+    Zainab Alshaikh<br>
+    <span class="accent-line">Software Engineer.</span>
+  </h1>
+  <p class="hero-sub">
+    Full-stack developer and AI builder with expertise in React, Java, Python, and agentic AI.
+    I build intelligent web applications, automation platforms, and AI-powered solutions.
+  </p>
+  <div class="hero-chips">
+    <span class="chip">Full-Stack Development</span>
+    <span class="chip">Agentic AI</span>
+    <span class="chip">Machine Learning</span>
+    <span class="chip">Computer Vision</span>
+    <span class="chip">Workflow Automation</span>
+    <span class="chip">Data Analytics</span>
+    <span class="chip">Mobile Development</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-primary">View Projects</a>
+    <a href="#contact" class="btn-outline">Get In Touch</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="sec-label">About</div>
+  <div class="sec-title">Building with purpose.</div>
+  <div class="about-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+    <div>
+      <p style="font-size:15px; color:var(--text2); line-height:1.8; margin-bottom:1.25rem;">
+        I'm a Software Engineering graduate from the University of Bahrain with a completed professional certification in Software & Cloud from Skills Union (Jul 2026). My work spans full-stack web development, AI/ML systems, data analytics, and mobile applications.
+      </p>
+      <p style="font-size:15px; color:var(--text2); line-height:1.8;">
+        From training neural networks for hand gesture recognition to building real-time social media platforms, I combine engineering fundamentals with modern tools to deliver complete, production-ready solutions.
+      </p>
+    </div>
+    <div>
+      <div class="sec-label" style="margin-bottom:1rem;">Education & Experience</div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">Jan 2026 – Jul 2026</div>
+          <div class="tl-title">Software Engineering: Software & Cloud</div>
+          <div class="tl-org">Skills Union / Localized World</div>
+          <div class="tl-body">React, Java, Firebase, Spring Boot, DevOps. Completed Jul 2026 · 100% assessment completion.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">2018 – 2025</div>
+          <div class="tl-title">B.Sc. Software Engineering</div>
+          <div class="tl-org">University of Bahrain</div>
+          <div class="tl-body">Full-stack development, data analytics, machine learning, and software architecture.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-period">Jul – Aug 2023</div>
+          <div class="tl-title">Technical Developer Intern</div>
+          <div class="tl-org">Openinside W.L.L · Manama, Bahrain</div>
+          <div class="tl-body">Built a Flutter attendance app for Odoo employees; gained hands-on Odoo system experience during one-month intensive programme.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects">
+  <div class="sec-label">Featured Projects</div>
+  <div class="sec-title">Selected work.</div>
+  <p class="sec-desc">Eight projects spanning AI, full-stack engineering, data science, and agentic automation.</p>
+
+  <div class="featured-grid">
+
+    <!-- 1: Hand Gesture — full width flagship -->
+    <div class="proj-card span-2">
+      <div class="accent-dot"></div>
+      <div class="proj-body">
+        <div class="proj-rank rank-1">🥇 Flagship Project</div>
+        <div class="proj-title-sm" style="font-size:1.3rem;">Hand Gesture Recognition System</div>
+        <div class="proj-achievement-badge">AI · Computer Vision</div>
+        <p class="proj-desc">Real-time computer vision application that recognizes 8 hand gestures using webcam input. Built a complete AI pipeline from dataset creation to live inference — trained a deep neural network on 21-landmark hand data with confidence scoring and FPS monitoring.</p>
+        <div class="tech-stack">
+          <span class="tag tag-py">Python</span>
+          <span class="tag tag-py">TensorFlow</span>
+          <span class="tag tag-py">MediaPipe</span>
+          <span class="tag tag-py">OpenCV</span>
+        </div>
+        <ul class="proj-features">
+          <li>21 hand landmark extraction with real-time inference</li>
+          <li>Deep neural network trained from custom dataset</li>
+          <li>8 gesture classes with confidence score prediction</li>
+          <li>Live FPS monitoring and smooth webcam integration</li>
+        </ul>
+      </div>
+      <div style="min-width:190px; display:flex; flex-direction:column; gap:10px; padding-top:2rem;">
+        <div style="background:var(--bg3); border:0.5px solid var(--border); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; font-family:'Space Grotesk',sans-serif; color:var(--teal);">8</div>
+          <div style="font-size:11px; color:var(--text3); margin-top:2px;">Gesture classes</div>
+        </div>
+        <div style="background:var(--bg3); border:0.5px solid var(--border); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; font-family:'Space Grotesk',sans-serif; color:var(--accent2);">21</div>
+          <div style="font-size:11px; color:var(--text3); margin-top:2px;">Hand landmarks</div>
+        </div>
+        <div style="background:var(--bg3); border:0.5px solid var(--border); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.8rem; font-weight:700; font-family:'Space Grotesk',sans-serif; color:var(--coral);">Live</div>
+          <div style="font-size:11px; color:var(--text3); margin-top:2px;">Real-time inference</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2: Inventory -->
+    <div class="proj-card">
+      <div class="accent-dot" style="background:radial-gradient(circle,rgba(249,124,107,0.12) 0%,transparent 70%);"></div>
+      <div class="proj-rank" style="color:var(--text3);">🥈 Enterprise App</div>
+      <div class="proj-title-sm">Inventory Management System</div>
+      <div class="proj-achievement-badge" style="background:rgba(249,124,107,0.12);color:var(--coral);border-color:rgba(249,124,107,0.25);">Full-Stack</div>
+      <p class="proj-desc">Enterprise-grade system with Spring Boot backend, PostgreSQL database, and React frontend. Covers full product lifecycle with CRUD, auth, search, filtering, and REST API documentation.</p>
+      <div class="tech-stack">
+        <span class="tag tag-java">Spring Boot</span>
+        <span class="tag tag-java">PostgreSQL</span>
+        <span class="tag tag-js">React</span>
+        <span class="tag tag-java">REST API</span>
+      </div>
+      <ul class="proj-features">
+        <li>Scalable backend architecture with layered design</li>
+        <li>Authentication & authorization</li>
+        <li>Full-text search and filtering</li>
+      </ul>
+    </div>
+
+    <!-- 3: Traffic Accident -->
+    <div class="proj-card">
+      <div class="accent-dot" style="background:radial-gradient(circle,rgba(95,218,142,0.1) 0%,transparent 70%);"></div>
+      <div class="proj-rank" style="color:var(--green);">🥉 Research Project</div>
+      <div class="proj-title-sm">Traffic Accident Severity Prediction</div>
+      <div class="proj-achievement-badge" style="background:rgba(95,218,142,0.1);color:var(--green);border-color:rgba(95,218,142,0.22);">Machine Learning</div>
+      <p class="proj-desc">Predicted accident severity (Fatal/Serious/Slight) across 35,999 records in Bahrain. Compared four supervised ML models achieving 79.95% accuracy with rigorous statistical evaluation.</p>
+      <div class="tech-stack">
+        <span class="tag tag-r">R</span>
+        <span class="tag tag-r">Logistic Regression</span>
+        <span class="tag tag-r">KNN</span>
+        <span class="tag tag-r">LDA / QDA</span>
+      </div>
+      <ul class="proj-features">
+        <li>79.95% classification accuracy</li>
+        <li>EDA, preprocessing, class imbalance analysis</li>
+        <li>Kappa, sensitivity, confusion matrix evaluation</li>
+      </ul>
+    </div>
+
+    <!-- 4: AI Dietician -->
+    <div class="proj-card">
+      <div class="accent-dot" style="background:radial-gradient(circle,rgba(45,212,191,0.1) 0%,transparent 70%);"></div>
+      <div class="proj-rank" style="color:var(--teal);">4 · Team Lead</div>
+      <div class="proj-title-sm">AI Dietician</div>
+      <div class="proj-achievement-badge" style="background:rgba(45,212,191,0.12);color:var(--teal);border-color:rgba(45,212,191,0.25);">AI · Full-Stack</div>
+      <p class="proj-desc">Personalized nutrition management system with ML-generated meal plans. Led a team of three through the full product lifecycle — from requirements to deployment — using the Waterfall model.</p>
+      <div class="tech-stack">
+        <span class="tag tag-py">Django</span>
+        <span class="tag tag-py">Python</span>
+        <span class="tag tag-def">MySQL</span>
+        <span class="tag tag-js">JavaScript</span>
+      </div>
+      <ul class="proj-features">
+        <li>Calorie counter & personalized diet plans</li>
+        <li>User and admin interfaces with activity tracking</li>
+        <li>ML-driven meal recommendations</li>
+      </ul>
+    </div>
+
+    <!-- 5: Social Media -->
+    <div class="proj-card">
+      <div class="proj-rank" style="color:var(--amber);">5 · SPA</div>
+      <div class="proj-title-sm">Social Media Platform</div>
+      <div class="proj-achievement-badge" style="background:rgba(245,200,66,0.1);color:var(--amber);border-color:rgba(245,200,66,0.22);">React · Firebase</div>
+      <p class="proj-desc">Instagram-inspired platform with real-time features, protected routing, and cloud authentication. Evolved into a feature-rich SPA with analytics, real-time chat, and admin dashboard.</p>
+      <div class="tech-stack">
+        <span class="tag tag-js">React</span>
+        <span class="tag tag-def">Firebase Auth</span>
+        <span class="tag tag-def">Firestore</span>
+        <span class="tag tag-js">React Router v6</span>
+      </div>
+      <ul class="proj-features">
+        <li>Real-time chat and post interactions</li>
+        <li>User profiles and post analytics</li>
+        <li>Admin dashboard and protected routes</li>
+      </ul>
+    </div>
+
+    <!-- 6: Weather -->
+    <div class="proj-card">
+      <div class="proj-rank" style="color:var(--text3);">6 · Dashboard</div>
+      <div class="proj-title-sm">Weather Analytics Dashboard</div>
+      <div class="proj-achievement-badge">Data Analytics</div>
+      <p class="proj-desc">Data analytics platform collecting and visualizing meteorological data. Async Axios promise chains, dynamic weather icons, robust error handling, and business-style Power BI dashboards.</p>
+      <div class="tech-stack">
+        <span class="tag tag-py">Python</span>
+        <span class="tag tag-py">Pandas</span>
+        <span class="tag tag-js">React</span>
+        <span class="tag tag-def">Power BI</span>
+      </div>
+      <ul class="proj-features">
+        <li>Real-time OpenWeatherMap API integration</li>
+        <li>Trend analysis and historical comparisons</li>
+        <li>Interactive Power BI dashboards</li>
+      </ul>
+    </div>
+
+    <!-- 7: Tadweer AI — full width, hackathon winner -->
+    <div class="proj-card span-2" style="border-color: rgba(95,218,142,0.3); background: linear-gradient(135deg, #16161f 0%, #141f1a 100%);">
+      <div class="accent-dot" style="background:radial-gradient(circle,rgba(95,218,142,0.18) 0%,transparent 70%);"></div>
+      <div class="proj-body">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.9rem; flex-wrap:wrap;">
+          <div class="proj-rank" style="color:var(--green); margin-bottom:0;">7 · AI Hackathon</div>
+          <span style="font-size:11px; font-weight:600; background:rgba(95,218,142,0.15); color:var(--green); border:0.5px solid rgba(95,218,142,0.35); border-radius:100px; padding:3px 12px;">🏆 Gold Rating · AI Showcase Featured Project</span>
+        </div>
+        <div class="proj-title-sm" style="font-size:1.25rem;">Tadweer AI: Intelligent Construction Waste Circular Economy Assistant</div>
+        <div style="margin-bottom:1rem;">
+          <span class="proj-achievement-badge" style="background:rgba(95,218,142,0.12);color:var(--green);border-color:rgba(95,218,142,0.3);">Agentic AI · Sustainability</span>
+          <span style="font-size:11px; color:var(--text3); margin-left:10px;">Kanz AI Hackathon · Jul 2026 · Credential: KANZ-ATT-90A9F6224A</span>
+        </div>
+        <p class="proj-desc">AI-powered platform facilitating a circular economy by optimizing construction waste management. Connects construction companies with recycling partners, providing intelligent recommendations to transform waste into valuable resources. Earned a <strong style="color:var(--green)">Gold Rating</strong> from the AI judging panel and was selected as an <strong style="color:var(--green)">AI Showcase Featured Project</strong> at the Kanz AI Training Hackathon — organized in partnership with LAU ACE & Ministry of Human Resources and Social Development, Saudi Arabia.</p>
+        <div class="tech-stack">
+          <span class="tag tag-py">Google Gemini API</span>
+          <span class="tag tag-py">Agentic AI</span>
+          <span class="tag tag-js">Replit</span>
+          <span class="tag tag-def">Canva AI</span>
+          <span class="tag tag-def">NotebookLM</span>
+        </div>
+        <ul class="proj-features">
+          <li>AI-driven material-to-recycler matching based on type, capacity, and distance</li>
+          <li>Contractor waste submission → recycler recommendation → driver → plant workflow</li>
+          <li>Future: computer vision waste valuation and AI environmental compliance advisor</li>
+          <li>Designed for Saudi Arabia's sustainable construction sector</li>
+        </ul>
+        <a href="https://try.ka.nz/ai/zainabali" target="_blank" class="proj-link" style="color:var(--green);">View live project ↗</a>
+      </div>
+      <div style="min-width:190px; display:flex; flex-direction:column; gap:10px; padding-top:1rem;">
+        <div style="background:rgba(95,218,142,0.08); border:0.5px solid rgba(95,218,142,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.5rem;">🥇</div>
+          <div style="font-size:12px; font-weight:600; color:var(--green); margin-top:4px;">Gold Rating</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">AI Judging Panel</div>
+        </div>
+        <div style="background:rgba(95,218,142,0.08); border:0.5px solid rgba(95,218,142,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.5rem;">🌟</div>
+          <div style="font-size:12px; font-weight:600; color:var(--green); margin-top:4px;">Showcase Pick</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">Featured Project</div>
+        </div>
+        <div style="background:rgba(95,218,142,0.08); border:0.5px solid rgba(95,218,142,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.5rem;">♻️</div>
+          <div style="font-size:12px; font-weight:600; color:var(--green); margin-top:4px;">Circular Economy</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">Construction Waste AI</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8: AgencyFlow AI — full width, in progress -->
+    <div class="proj-card span-2" style="border-color: rgba(160,140,248,0.3); background: linear-gradient(135deg, #16161f 0%, #19161f 100%);">
+      <div class="accent-dot" style="background:radial-gradient(circle,rgba(160,140,248,0.18) 0%,transparent 70%);"></div>
+      <div class="proj-body">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:0.9rem; flex-wrap:wrap;">
+          <div class="proj-rank" style="color:var(--accent2); margin-bottom:0;">8 · SaaS Platform</div>
+          <span style="font-size:11px; font-weight:600; background:rgba(160,140,248,0.15); color:var(--accent2); border:0.5px solid rgba(160,140,248,0.35); border-radius:100px; padding:3px 12px;">🔨 In Progress</span>
+        </div>
+        <div class="proj-title-sm" style="font-size:1.25rem;">AgencyFlow AI: Intelligent Workflow Automation Platform</div>
+        <div style="margin-bottom:1rem;">
+          <span class="proj-achievement-badge">Agentic AI · SaaS</span>
+        </div>
+        <p class="proj-desc">AI-powered SaaS platform that automates administrative and document creation workflows for creative agencies. A single project record automatically generates professional proposals, contracts, presentations, and workflow plans — eliminating repetitive manual work. Integrates Google Gemini API to analyze project data, detect missing information, and dynamically produce business-ready content at scale.</p>
+        <div class="tech-stack">
+          <span class="tag tag-js">React</span>
+          <span class="tag tag-js">TypeScript</span>
+          <span class="tag tag-js">Tailwind CSS</span>
+          <span class="tag tag-def">Node.js</span>
+          <span class="tag tag-def">Express.js</span>
+          <span class="tag tag-java">PostgreSQL</span>
+          <span class="tag tag-py">Google Gemini API</span>
+          <span class="tag tag-def">n8n Automation</span>
+          <span class="tag tag-def">JWT / RBAC</span>
+        </div>
+        <ul class="proj-features">
+          <li>AI agent analyzes project data, validates completeness, and generates proposals, contracts & presentations</li>
+          <li>Google Sheets sync and n8n webhook automation for end-to-end workflow execution</li>
+          <li>Document export in PDF, DOCX, and PPTX from a single project record</li>
+          <li>Role-based access control (Admin / Employee) with JWT authentication</li>
+        </ul>
+      </div>
+      <div style="min-width:190px; display:flex; flex-direction:column; gap:10px; padding-top:1rem;">
+        <div style="background:rgba(160,140,248,0.08); border:0.5px solid rgba(160,140,248,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.3rem;">🤖</div>
+          <div style="font-size:12px; font-weight:600; color:var(--accent2); margin-top:4px;">Gemini API</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">AI Document Gen</div>
+        </div>
+        <div style="background:rgba(160,140,248,0.08); border:0.5px solid rgba(160,140,248,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.3rem;">⚡</div>
+          <div style="font-size:12px; font-weight:600; color:var(--accent2); margin-top:4px;">n8n Workflows</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">Automated Pipelines</div>
+        </div>
+        <div style="background:rgba(160,140,248,0.08); border:0.5px solid rgba(160,140,248,0.2); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:1.3rem;">📄</div>
+          <div style="font-size:12px; font-weight:600; color:var(--accent2); margin-top:4px;">3 Doc Formats</div>
+          <div style="font-size:10px; color:var(--text3); margin-top:2px;">PDF · DOCX · PPTX</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ALL PROJECTS -->
+<section>
+  <div class="sec-label">All Projects</div>
+  <div class="sec-title">More work.</div>
+
+  <div class="cat-section">
+    <div class="cat-title">Software Engineering</div>
+    <div class="all-grid">
+      <div class="mini-card">
+        <div class="mini-title">Customer Relationship Management System (CRM)</div>
+        <div class="mini-desc">Full-stack CRM inspired by HubSpot/Salesforce — React frontend communicating with a Java Spring Boot API via Axios. Features JWT authentication, role-based access (Admin/Employee), customer &amp; lead management, task tracking, meeting scheduling, analytics dashboard with charts, AI-powered contact note summaries, and a sales pipeline report module.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">React</span><span class="mini-tag">Spring Boot</span><span class="mini-tag">Java</span><span class="mini-tag">Axios</span><span class="mini-tag">JWT</span><span class="mini-tag">REST API</span><span class="mini-tag">React Bootstrap</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-title">Bank Account Management System</div>
+        <div class="mini-desc">Console-based banking system demonstrating OOP: abstraction, polymorphism, inheritance, and encapsulation across Savings and Current account types.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">Java</span><span class="mini-tag">OOP</span><span class="mini-tag">Design Patterns</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-title">Attendance App for Odoo Employees</div>
+        <div class="mini-desc">Cross-platform mobile app for employee check-in/check-out, integrated with Odoo business workflows. Built during internship at Openinside W.L.L.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">Flutter</span><span class="mini-tag">Dart</span><span class="mini-tag">Odoo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-section">
+    <div class="cat-title">Frontend & React</div>
+    <div class="all-grid">
+      <div class="mini-card">
+        <div class="mini-title">Real-Time Weather Dashboard</div>
+        <div class="mini-desc">Responsive weather app fetching data via chained Axios promises, dynamic icons, metric conversions, and robust error/loading state handling.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">JavaScript</span><span class="mini-tag">Axios</span><span class="mini-tag">REST API</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-title">React Components & Assignments</div>
+        <div class="mini-desc">Collection of functional components, hooks, routing, and state management patterns built during the Skills Union certification programme.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">React</span><span class="mini-tag">Hooks</span><span class="mini-tag">React Router</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cat-section">
+    <div class="cat-title">Coursework & Training Projects</div>
+    <div class="all-grid">
+      <div class="mini-card">
+        <div class="mini-title">CRUD Assignment Apps</div>
+        <div class="mini-desc">To-do lists, quiz apps, and calculator projects demonstrating fundamental JavaScript, DOM manipulation, and React state patterns.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">HTML/CSS</span><span class="mini-tag">JavaScript</span><span class="mini-tag">React</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-title">Java Console Projects</div>
+        <div class="mini-desc">Command-line programs applying core Java: loops, collections, file I/O, exception handling, and object-oriented design principles.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">Java</span><span class="mini-tag">OOP</span><span class="mini-tag">JUnit</span>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-title">Firebase Exercises</div>
+        <div class="mini-desc">Authentication flows, Firestore CRUD, real-time listeners, and Firebase Hosting deployment practice.</div>
+        <div class="mini-stack">
+          <span class="mini-tag">Firebase</span><span class="mini-tag">React</span><span class="mini-tag">Cloud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label">Skills</div>
+  <div class="sec-title">Technical toolkit.</div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-title">Frontend</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">React.js</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">JavaScript ES6+</span>
+        <span class="skill-pill">Tailwind CSS</span>
+        <span class="skill-pill">shadcn/ui</span>
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">Bootstrap</span>
+        <span class="skill-pill">Figma</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Backend</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">Java (OOP)</span>
+        <span class="skill-pill">Spring Boot</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">Express.js</span>
+        <span class="skill-pill">Django</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">RESTful APIs</span>
+        <span class="skill-pill">n8n Automation</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Data & AI</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">TensorFlow</span>
+        <span class="skill-pill">MediaPipe</span>
+        <span class="skill-pill">Pandas</span>
+        <span class="skill-pill">R</span>
+        <span class="skill-pill">Power BI</span>
+        <span class="skill-pill">Machine Learning</span>
+        <span class="skill-pill">Google Gemini API</span>
+        <span class="skill-pill">Agentic AI</span>
+        <span class="skill-pill">Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Database & Cloud</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">Firebase Auth</span>
+        <span class="skill-pill">Firestore</span>
+        <span class="skill-pill">Oracle</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Mobile</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">React Native</span>
+        <span class="skill-pill">Flutter</span>
+        <span class="skill-pill">Dart</span>
+        <span class="skill-pill">Android Studio</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-title">Tools & Methods</div>
+      <div class="skill-pill-list">
+        <span class="skill-pill">Git / GitHub</span>
+        <span class="skill-pill">VS Code</span>
+        <span class="skill-pill">Agile</span>
+        <span class="skill-pill">Waterfall</span>
+        <span class="skill-pill">JUnit</span>
+        <span class="skill-pill">CLI</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section>
+  <div class="sec-label">Certificates & Awards</div>
+  <div class="sec-title">Credentials.</div>
+  <div class="certs-grid">
+    <div class="cert-card" style="border-color:rgba(95,218,142,0.25); background:linear-gradient(135deg,#16161f,#141f1a);">
+      <div class="cert-icon cert-icon-4">🏆</div>
+      <div>
+        <div class="cert-name" style="color:var(--green);">AI Training Hackathon — Gold Rating &amp; AI Showcase Featured Project</div>
+        <div class="cert-org">Kanz AI × LAU ACE × Ministry of Human Resources &amp; Social Development, Saudi Arabia</div>
+        <div style="font-size:11px; color:var(--text3); margin-top:4px;">Jul 15, 2026 · Credential ID: KANZ-ATT-90A9F6224A</div>
+        <div style="margin-top:6px;"><a href="https://try.ka.nz/ai/zainabali" target="_blank" style="font-size:11px; color:var(--green); text-decoration:none;">View project ↗</a></div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon cert-icon-1">🎓</div>
+      <div>
+        <div class="cert-name">Software Engineering: Software &amp; Cloud</div>
+        <div class="cert-org">Skills Union / Localized World — Completed Jul 2026</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon cert-icon-2">📊</div>
+      <div>
+        <div class="cert-name">McKinsey Forward Program</div>
+        <div class="cert-org">McKinsey &amp; Company — Jul 2025</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon cert-icon-3">💡</div>
+      <div>
+        <div class="cert-name">No Code Programme: Tech for Non-Techies</div>
+        <div class="cert-org">Issued Feb 2025 · Credential ID: NC12024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="sec-label" style="text-align:center; margin-bottom:0.75rem;">Contact</div>
+    <div class="contact-title">Let's work together.</div>
+    <p style="font-size:14.5px; color:var(--text2); line-height:1.7;">
+      I'm open to full-stack, AI engineering, backend Java, or workflow automation roles.<br>Based in Bahrain — open to remote and relocation.
+    </p>
+    <div class="contact-links">
+      <a href="mailto:alshaikh995@gmail.com" class="contact-btn">✉ alshaikh995@gmail.com</a>
+      <a href="https://www.linkedin.com/in/zainab-a-sheed17aab173/" target="_blank" class="contact-btn">LinkedIn ↗</a>
+      <a href="https://github.com/Zainab476" target="_blank" class="contact-btn">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Zainab Alshaikh · Software Engineer · Bahrain</footer>
+
+</body>
+</html>
